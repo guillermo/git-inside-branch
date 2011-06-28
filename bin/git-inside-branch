@@ -1,0 +1,22 @@
+#!/usr/bin/env ruby
+
+require 'git-inside-branch'
+
+args = ARGV.dup
+if args.size > 0 || args.include?("-h") || args.include?("--help")
+
+  Git::Inside::Branch.tempory_checkout(args.shift) do
+    args = %(bash) if args.empty?
+    pid = fork do 
+      exec(*args)
+    end
+    Process.wait(pid)
+  end
+
+else
+
+  $stderr.puts "usage: #{$0} branch_name [command]\n\n"
+  $stderr.puts "    If no command given, bash will be used."
+  $stderr.puts "WARNING: Do work with both checkouts at the same time."
+  
+end
