@@ -1,6 +1,8 @@
 # git-inside-branch
 
 git-inside-branch allows you to inspect and modify another branch in a temporarily directory without affecting current working tree.
+[![Build Status](https://secure.travis-ci.org/guillermo/git-inside-branch.png)](http://travis-ci.org/guillermo/git-inside-branch)
+
 [![endorse](http://api.coderwall.com/guillermo/endorsecount.png)](http://coderwall.com/guillermo)
 
 
