@@ -1,16 +1,12 @@
-
-
-git-inside-branch
-=================
+# git-inside-branch
 
 git-inside-branch allows you to inspect and modify another branch in a temporarily directory without affecting current working tree.
+[![endorse](http://api.coderwall.com/guillermo/endorsecount.png)](http://coderwall.com/guillermo)
 
 
-Usage
-=====
+# Usage
 
-From command line
------------------
+## From command line
 
     git inside-branch doc_branch bash
 
@@ -19,8 +15,7 @@ This will checkout doc_branch and run bash. Then you edit your docs with vim or 
     git inside-branch gh_pages "cp $HOME/projects/my_proj/rdoc . && git add . && git commit -am 'Doc updates' && git push"
 
 
-From ruby
----------
+## From ruby
 
     Git::Inside::Branch.tempory_checkout("gh_pages") do
       `cp $HOME/projects/my_lib/rdoc .`
@@ -29,21 +24,18 @@ From ruby
 
 I think is easy.
 
-Documentation
-=============
+# Documentation
 
 * Git::Inside::Branch.tempory_checkout( *branch_name*, *&block* )
-  
+
   Run the code passed in the block in another temporarily checkouted directory from the branch __branch_name__
 
-AUTHOR
-======
+# AUTHOR
 
  * Guillermo Álvarez <guillermo@cientifico.net>
 
 
-LICENSE
-=======
+# LICENSE
 
 
 Copyright (c) 2011, Guillermo Álvarez <guillermo@cientifico.net>
